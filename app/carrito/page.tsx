@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ChevronLeft, Trash2, Plus, Minus, ShoppingBag } from 'lucide-react'
 import { useCart } from '@/lib/CartContext'
 import { WHATSAPP_NUMBER } from '@/lib/products'
+import { formatPrice } from '@/lib/utils'
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, clearCart, totalItems, totalPrice } = useCart()
@@ -15,7 +16,7 @@ export default function CartPage() {
 
     const lines = items.map(
       (item) =>
-        `• ${item.quantity}x ${item.name} | Talle: ${item.size} | ${item.buyType === 'retail' ? 'Minorista' : 'Mayorista'} | $${(item.price * item.quantity).toLocaleString()}`
+        `• ${item.quantity}x ${item.name} | Talle: ${item.size} | ${item.buyType === 'retail' ? 'Minorista' : 'Mayorista'} | $${formatPrice(item.price * item.quantity)}`
     )
 
     const message = [
@@ -23,7 +24,7 @@ export default function CartPage() {
       '',
       ...lines,
       '',
-      `TOTAL: $${totalPrice.toLocaleString()}`,
+      `TOTAL: $${formatPrice(totalPrice)}`,
       '',
       'Quedo a la espera de confirmacion. Gracias!',
     ].join('\n')
@@ -106,7 +107,7 @@ export default function CartPage() {
                             {item.buyType === 'retail' ? 'Minorista' : 'Mayorista'}
                           </span>
                         </p>
-                        <p className="text-xs text-gray-400 mt-0.5">${item.price.toLocaleString()} c/u</p>
+                        <p className="text-xs text-gray-400 mt-0.5">${formatPrice(item.price)} c/u</p>
                       </div>
                       <button
                         onClick={() => removeItem(item.id, item.size, item.buyType)}
@@ -133,7 +134,7 @@ export default function CartPage() {
                           <Plus size={12} />
                         </button>
                       </div>
-                      <p className="font-black text-base">${(item.price * item.quantity).toLocaleString()}</p>
+                      <p className="font-black text-base">${formatPrice(item.price * item.quantity)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -153,7 +154,7 @@ export default function CartPage() {
                     <span className="text-gray-600 truncate mr-2">
                       {item.quantity}x {item.name} ({item.size})
                     </span>
-                    <span className="font-medium flex-shrink-0">${(item.price * item.quantity).toLocaleString()}</span>
+                    <span className="font-medium flex-shrink-0">${formatPrice(item.price * item.quantity)}</span>
                   </div>
                 ))}
               </div>
@@ -161,7 +162,7 @@ export default function CartPage() {
               <div className="border-t border-gray-100 pt-4 mb-6">
                 <div className="flex justify-between items-center">
                   <span className="font-black text-lg">Total</span>
-                  <span className="font-black text-2xl">${totalPrice.toLocaleString()}</span>
+                  <span className="font-black text-2xl">${formatPrice(totalPrice)}</span>
                 </div>
                 <p className="text-xs text-gray-400 mt-1">Precio mayorista se aplica desde 3 unidades</p>
               </div>

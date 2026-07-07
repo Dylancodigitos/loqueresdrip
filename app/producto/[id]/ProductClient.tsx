@@ -7,6 +7,7 @@ import { Heart, Share2, ShoppingCart, ChevronLeft, Plus, Minus } from 'lucide-re
 import Link from 'next/link'
 import { WHATSAPP_NUMBER } from '@/lib/products'
 import { useCart } from '@/lib/CartContext'
+import { formatPrice } from '@/lib/utils'
 
 interface Product {
   id: number
@@ -55,7 +56,7 @@ export function ProductClient({ product }: ProductClientProps) {
   }
 
   const handleWhatsApp = () => {
-    const text = `Hola! Quiero comprar ${quantity}x ${product.name} - Talle ${selectedSize} (${buyType === 'retail' ? 'Minorista' : 'Mayorista'}) - Total: $${totalPrice.toLocaleString()}`
+    const text = `Hola! Quiero comprar ${quantity}x ${product.name} - Talle ${selectedSize} (${buyType === 'retail' ? 'Minorista' : 'Mayorista'}) - Total: $${formatPrice(totalPrice)}`
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank')
   }
 
@@ -137,11 +138,11 @@ export function ProductClient({ product }: ProductClientProps) {
             <div className="flex gap-6 mb-4">
               <div>
                 <p className="text-xs text-gray-500 mb-1">Minorista (1-2)</p>
-                <p className="text-2xl font-black">${product.priceRetail.toLocaleString()}</p>
+                <p className="text-2xl font-black">${formatPrice(product.priceRetail)}</p>
               </div>
               <div>
                 <p className="text-xs text-gray-500 mb-1">Mayorista (3+)</p>
-                <p className="text-2xl font-black text-red-600">${product.priceWholesale.toLocaleString()}</p>
+                <p className="text-2xl font-black text-red-600">${formatPrice(product.priceWholesale)}</p>
                 <p className="text-xs text-green-600 font-bold">{discountPct}% OFF</p>
               </div>
             </div>
@@ -217,7 +218,7 @@ export function ProductClient({ product }: ProductClientProps) {
           {/* Total */}
           <div className="flex items-center justify-between bg-black text-white rounded-xl p-4">
             <span className="text-sm font-medium">Total</span>
-            <span className="text-2xl font-black">${totalPrice.toLocaleString()}</span>
+            <span className="text-2xl font-black">${formatPrice(totalPrice)}</span>
           </div>
 
           {/* Botones de accion */}

@@ -7,6 +7,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { PRODUCTS, CATEGORIES } from '@/lib/products'
 import { useCart } from '@/lib/CartContext'
+import { formatPrice } from '@/lib/utils'
 
 export function Catalog() {
   const { addItem, items } = useCart()
@@ -139,11 +140,11 @@ export function Catalog() {
                       <div className="flex justify-between items-end">
                         <div>
                           <p className="text-xs text-gray-400">Minorista</p>
-                          <p className="font-black text-lg">${product.priceRetail.toLocaleString()}</p>
+                          <p className="font-black text-lg">${formatPrice(product.priceRetail)}</p>
                         </div>
                         <div className="text-right">
                           <p className="text-xs text-gray-400">Mayorista (3+)</p>
-                          <p className="font-black text-lg text-red-600">${product.priceWholesale.toLocaleString()}</p>
+                          <p className="font-black text-lg text-red-600">${formatPrice(product.priceWholesale)}</p>
                         </div>
                       </div>
                     </div>
