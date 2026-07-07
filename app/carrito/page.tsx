@@ -107,7 +107,7 @@ export default function CartPage() {
                             {item.buyType === 'retail' ? 'Minorista' : 'Mayorista'}
                           </span>
                         </p>
-                        <p className="text-xs text-gray-400 mt-0.5">${formatPrice(item.price)} c/u</p>
+                        <p className="text-xs text-gray-400 mt-0.5" suppressHydrationWarning>${formatPrice(item.price)} c/u</p>
                       </div>
                       <button
                         onClick={() => removeItem(item.id, item.size, item.buyType)}
@@ -134,7 +134,7 @@ export default function CartPage() {
                           <Plus size={12} />
                         </button>
                       </div>
-                      <p className="font-black text-base">${formatPrice(item.price * item.quantity)}</p>
+                      <p className="font-black text-base" suppressHydrationWarning>${formatPrice(item.price * item.quantity)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -154,15 +154,15 @@ export default function CartPage() {
                     <span className="text-gray-600 truncate mr-2">
                       {item.quantity}x {item.name} ({item.size})
                     </span>
-                    <span className="font-medium flex-shrink-0">${formatPrice(item.price * item.quantity)}</span>
+                    <span className="font-medium flex-shrink-0" suppressHydrationWarning>${formatPrice(item.price * item.quantity)}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="border-t border-gray-100 pt-4 mb-6">
+              <div className="border-t border-gray-100 pt-4 mb-6" suppressHydrationWarning>
                 <div className="flex justify-between items-center">
                   <span className="font-black text-lg">Total</span>
-                  <span className="font-black text-2xl">${formatPrice(totalPrice)}</span>
+                  <span className="font-black text-2xl" suppressHydrationWarning>${formatPrice(totalPrice)}</span>
                 </div>
                 <p className="text-xs text-gray-400 mt-1">Precio mayorista se aplica desde 3 unidades</p>
               </div>

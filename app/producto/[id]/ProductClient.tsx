@@ -134,15 +134,15 @@ export function ProductClient({ product }: ProductClientProps) {
           </div>
 
           {/* Precios */}
-          <div className="bg-gray-50 rounded-xl p-4">
+          <div className="bg-gray-50 rounded-xl p-4" suppressHydrationWarning>
             <div className="flex gap-6 mb-4">
               <div>
                 <p className="text-xs text-gray-500 mb-1">Minorista (1-2)</p>
-                <p className="text-2xl font-black">${formatPrice(product.priceRetail)}</p>
+                <p className="text-2xl font-black" suppressHydrationWarning>${formatPrice(product.priceRetail)}</p>
               </div>
               <div>
                 <p className="text-xs text-gray-500 mb-1">Mayorista (3+)</p>
-                <p className="text-2xl font-black text-red-600">${formatPrice(product.priceWholesale)}</p>
+                <p className="text-2xl font-black text-red-600" suppressHydrationWarning>${formatPrice(product.priceWholesale)}</p>
                 <p className="text-xs text-green-600 font-bold">{discountPct}% OFF</p>
               </div>
             </div>
@@ -218,7 +218,7 @@ export function ProductClient({ product }: ProductClientProps) {
           {/* Total */}
           <div className="flex items-center justify-between bg-black text-white rounded-xl p-4">
             <span className="text-sm font-medium">Total</span>
-            <span className="text-2xl font-black">${formatPrice(totalPrice)}</span>
+            <span className="text-2xl font-black" suppressHydrationWarning>${formatPrice(totalPrice)}</span>
           </div>
 
           {/* Botones de accion */}

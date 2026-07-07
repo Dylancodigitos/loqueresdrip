@@ -136,15 +136,15 @@ export function Catalog() {
                     )}
 
                     {/* Precios */}
-                    <div className="bg-gray-50 rounded-xl p-3 mb-4 flex-1">
+                    <div className="bg-gray-50 rounded-xl p-3 mb-4 flex-1" suppressHydrationWarning>
                       <div className="flex justify-between items-end">
                         <div>
                           <p className="text-xs text-gray-400">Minorista</p>
-                          <p className="font-black text-lg">${formatPrice(product.priceRetail)}</p>
+                          <p className="font-black text-lg" suppressHydrationWarning>${formatPrice(product.priceRetail)}</p>
                         </div>
                         <div className="text-right">
                           <p className="text-xs text-gray-400">Mayorista (3+)</p>
-                          <p className="font-black text-lg text-red-600">${formatPrice(product.priceWholesale)}</p>
+                          <p className="font-black text-lg text-red-600" suppressHydrationWarning>${formatPrice(product.priceWholesale)}</p>
                         </div>
                       </div>
                     </div>
