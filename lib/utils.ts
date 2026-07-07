@@ -6,5 +6,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatPrice(price: number): string {
-  return price.toLocaleString('en-US')
+  // Manual formatting to avoid locale-specific hydration mismatches
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
