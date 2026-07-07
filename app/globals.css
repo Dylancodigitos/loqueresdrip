@@ -2,6 +2,7 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -161,8 +162,9 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
-  }
+  overflow-x: hidden;
+  width: 100%;
+}
   html {
     @apply font-sans;
     scroll-behavior: smooth;
@@ -198,17 +200,4 @@
     opacity: 0.5;
   }
 }
-html,
-body {
-  width: 100%;
-  overflow-x: hidden;
-}
 
-* {
-  max-width: 100%;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
