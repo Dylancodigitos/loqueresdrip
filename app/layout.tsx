@@ -17,15 +17,16 @@ export const metadata: Metadata = {
   generator: 'v0.app',
   icons: {
     icon: '/icon.svg',
-    apple: '/apple-icon.png',
+    apple: '/logo.png',
   },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#e60000' },
-  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  colorScheme: "light",
+  themeColor: "#e60000",
 }
 
 export default function RootLayout({

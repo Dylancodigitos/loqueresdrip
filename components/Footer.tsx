@@ -11,13 +11,13 @@ export function Footer() {
     {
       icon: Heart,
       label: 'Instagram',
-      href: 'https://instagram.com',
+      href: 'https://instagram.com/loqueresdrip',
       color: 'hover:text-pink-600',
     },
     {
       icon: Mail,
       label: 'Email',
-      href: 'mailto:info@loqueres drip.com',
+      href: 'mailto:loqueresdrip@gmail.com',
       color: 'hover:text-blue-600',
     },
   ]
