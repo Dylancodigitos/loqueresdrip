@@ -20,7 +20,7 @@ export function Customization() {
       ],
     },
     {
-      id: 2,
+      id: 2,  
       title: 'Conjuntos Personalizados',
       description: 'Pack completo para tu marca',
       image: '/customization/conjunto-custom.png',
@@ -82,8 +82,8 @@ export function Customization() {
           >
             <span className="text-red-600 font-bold text-sm tracking-widest">SERVICIOS PERSONALIZADOS</span>
           </motion.div>
-          <h2 className="text-5xl font-black mb-4">Personalizaciones</h2>
-          <p className="text-xl text-gray-600">Tu diseño, tu estilo, tu marca</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">Personalizaciones</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600">Tu diseño, tu estilo, tu marca</p>
         </motion.div>
 
         {/* Servicios Grid */}
