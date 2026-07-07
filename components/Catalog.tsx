@@ -3,11 +3,32 @@
 import { motion } from 'framer-motion'
 import { Heart, ShoppingCart, Plus } from 'lucide-react'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { PRODUCTS, CATEGORIES } from '@/lib/products'
 import { useCart } from '@/lib/CartContext'
 import { formatPrice } from '@/lib/utils'
+
+function PriceDisplay({ retail, wholesale }: { retail: number; wholesale: number }) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  return (
+    <div className="flex justify-between items-end w-full">
+      <div>
+        <p className="text-xs text-gray-400">Minorista</p>
+        {mounted && <p className="font-black text-lg">${formatPrice(retail)}</p>}
+      </div>
+      <div className="text-right">
+        <p className="text-xs text-gray-400">Mayorista (3+)</p>
+        {mounted && <p className="font-black text-lg text-red-600">${formatPrice(wholesale)}</p>}
+      </div>
+    </div>
+  )
+}
 
 export function Catalog() {
   const { addItem, items } = useCart()
@@ -136,17 +157,8 @@ export function Catalog() {
                     )}
 
                     {/* Precios */}
-                    <div className="bg-gray-50 rounded-xl p-3 mb-4 flex-1" suppressHydrationWarning>
-                      <div className="flex justify-between items-end">
-                        <div>
-                          <p className="text-xs text-gray-400">Minorista</p>
-                          <p className="font-black text-lg" suppressHydrationWarning>${formatPrice(product.priceRetail)}</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-xs text-gray-400">Mayorista (3+)</p>
-                          <p className="font-black text-lg text-red-600" suppressHydrationWarning>${formatPrice(product.priceWholesale)}</p>
-                        </div>
-                      </div>
+                    <div className="bg-gray-50 rounded-xl p-3 mb-4 flex-1">
+                      <PriceDisplay retail={product.priceRetail} wholesale={product.priceWholesale} />
                     </div>
 
                     <p className="text-xs text-gray-400 mb-3">Talles: {product.sizes.join(' · ')}</p>

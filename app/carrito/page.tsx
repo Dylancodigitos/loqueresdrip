@@ -4,9 +4,21 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronLeft, Trash2, Plus, Minus, ShoppingBag } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import { useCart } from '@/lib/CartContext'
 import { WHATSAPP_NUMBER } from '@/lib/products'
 import { formatPrice } from '@/lib/utils'
+
+function CartPriceDisplay({ price }: { price: number }) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return <span>-</span>
+  return <span suppressHydrationWarning>${formatPrice(price)}</span>
+}
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, clearCart, totalItems, totalPrice } = useCart()
@@ -107,7 +119,7 @@ export default function CartPage() {
                             {item.buyType === 'retail' ? 'Minorista' : 'Mayorista'}
                           </span>
                         </p>
-                        <p className="text-xs text-gray-400 mt-0.5" suppressHydrationWarning>${formatPrice(item.price)} c/u</p>
+                        <p className="text-xs text-gray-400 mt-0.5">c/u <CartPriceDisplay price={item.price} /></p>
                       </div>
                       <button
                         onClick={() => removeItem(item.id, item.size, item.buyType)}
@@ -134,7 +146,7 @@ export default function CartPage() {
                           <Plus size={12} />
                         </button>
                       </div>
-                      <p className="font-black text-base" suppressHydrationWarning>${formatPrice(item.price * item.quantity)}</p>
+                      <CartPriceDisplay price={item.price * item.quantity} />
                     </div>
                   </div>
                 </motion.div>
@@ -154,15 +166,15 @@ export default function CartPage() {
                     <span className="text-gray-600 truncate mr-2">
                       {item.quantity}x {item.name} ({item.size})
                     </span>
-                    <span className="font-medium flex-shrink-0" suppressHydrationWarning>${formatPrice(item.price * item.quantity)}</span>
+                    <CartPriceDisplay price={item.price * item.quantity} />
                   </div>
                 ))}
               </div>
 
-              <div className="border-t border-gray-100 pt-4 mb-6" suppressHydrationWarning>
+              <div className="border-t border-gray-100 pt-4 mb-6">
                 <div className="flex justify-between items-center">
                   <span className="font-black text-lg">Total</span>
-                  <span className="font-black text-2xl" suppressHydrationWarning>${formatPrice(totalPrice)}</span>
+                  <CartPriceDisplay price={totalPrice} />
                 </div>
                 <p className="text-xs text-gray-400 mt-1">Precio mayorista se aplica desde 3 unidades</p>
               </div>
