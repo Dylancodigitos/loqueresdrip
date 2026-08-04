@@ -83,19 +83,23 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="grid grid-cols-3 gap-4 pt-8 border-t border-gray-200"
+              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 pt-8 border-t border-gray-200"
             >
-              <div>
-                <p className="text-2xl font-bold text-red-600">+20</p>
+              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center sm:text-left">
+                <p className="text-2xl font-bold text-red-600">+40</p>
                 <p className="text-sm text-gray-600">Clientes Satisfechos</p>
               </div>
-              <div>
+              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center sm:text-left">
                 <p className="text-2xl font-bold text-red-600">+30</p>
                 <p className="text-sm text-gray-600">Diseños</p>
               </div>
-              <div>
+              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center sm:text-left">
                 <p className="text-2xl font-bold text-red-600">S-XXL</p>
                 <p className="text-sm text-gray-600">Todos los Talles</p>
+              </div>
+              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center sm:text-left">
+                <p className="text-lg font-bold text-red-600">Envíos</p>
+                <p className="text-sm text-gray-600">A todo el Pais</p>
               </div>
             </motion.div>
           </motion.div>

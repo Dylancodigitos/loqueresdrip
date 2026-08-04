@@ -17,7 +17,7 @@ export function Benefits() {
     },
     {
       icon: Truck,
-      title: 'Envíos Rápidos',
+      title: 'Envíos A Todo el PAIS',
       description: 'Despachamos en 24/48hs',
     },
     {

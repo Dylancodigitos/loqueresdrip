@@ -256,7 +256,7 @@ export function ProductClient({ product }: ProductClientProps) {
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <div className="w-1.5 h-1.5 bg-red-600 rounded-full" />
-              Envios segun tu zona
+              ENVIOS A TODO EL PAIS
             </div>
           </div>
         </motion.div>
