@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: 'Ropa urbana premium, buzos, remeras y conjuntos personalizados. Atención mayorista y minorista.',
   generator: 'v0.app',
   icons: {
-    icon: '/icon.svg',
+    icon: '/logo.png',
     apple: '/logo.png',
   },
 }
