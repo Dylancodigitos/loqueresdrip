@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'LO QUERES DRIP | Streetwear Premium',
-  description: 'Ropa urbana premium, buzos, remeras y conjuntos personalizados. Atención mayorista y minorista.',
+  description: 'Ropa Urbana Premium, Buzos, Remeras, Conjuntos, Shorts. Atención mayorista y minorista.',
   generator: 'v0.app',
   icons: {
     icon: '/logo.png',

@@ -52,7 +52,7 @@ export function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg text-gray-600 mb-8 leading-relaxed font-semibold"
             >
-              Ropa urbana premium con estilo Jordan. Buzos de tela frizada, remeras personalizadas y conjuntos exclusivos.
+              Ropa urbana premium con estilo. Remeras 24.1 Algodon Peinado y conjuntos exclusivos.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -86,11 +86,11 @@ export function Hero() {
               className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 pt-8 border-t border-gray-200"
             >
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center sm:text-left">
-                <p className="text-2xl font-bold text-red-600">+40</p>
+                <p className="text-2xl font-bold text-red-600">+100</p>
                 <p className="text-sm text-gray-600">Clientes Satisfechos</p>
               </div>
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center sm:text-left">
-                <p className="text-2xl font-bold text-red-600">+30</p>
+                <p className="text-2xl font-bold text-red-600">+50</p>
                 <p className="text-sm text-gray-600">Diseños</p>
               </div>
               <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 text-center sm:text-left">

@@ -19,18 +19,8 @@ export function Customization() {
         'Talles S al XXL',
       ],
     },
-    {
-      id: 2,  
-      title: 'Conjuntos Personalizados',
-      description: 'Pack completo para tu marca',
-      image: '/customization/conjunto-custom.png',
-      details: [
-        'Buzos + Remeras + Pantalones',
-        'Colores y diseños a medida',
-        'Cantidad mínima flexible',
-        'Atención dedicada',
-      ],
-    },
+    
+  
     {
       id: 3,
       title: 'Buzos/Remeras Personalizados con tu Pareja',

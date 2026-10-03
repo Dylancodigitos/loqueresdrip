@@ -20,11 +20,11 @@ export function Benefits() {
       title: 'Envíos A Todo el PAIS',
       description: 'Despachamos en 24/48hs',
     },
-    {
+    {/* {
       icon: Zap,
       title: 'Talles Completos',
       description: 'Disponibles en todas las medidas: S, M, L, XL, XXL para toda la familia.',
-    },
+    },*/}
   ]
 
   const containerVariants = {
@@ -79,9 +79,7 @@ export function Benefits() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="relative bg-muted rounded-lg p-8 h-full group-hover:bg-white transition-colors duration-300">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
+                  
                   
                   <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                     {benefit.title}

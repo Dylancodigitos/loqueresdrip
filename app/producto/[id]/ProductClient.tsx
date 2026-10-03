@@ -171,7 +171,7 @@ export function ProductClient({ product }: ProductClientProps) {
             <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
           )}
 
-          {/* Talles */}
+          {/* Talles 
           <div>
             <p className="text-sm font-bold mb-3">Selecciona tu talle</p>
             <div className="flex flex-wrap gap-2">
